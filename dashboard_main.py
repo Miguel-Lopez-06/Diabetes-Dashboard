@@ -88,7 +88,7 @@ with st.sidebar:
     st.markdown("A Streamlit dashboard highlighting the results of training two classification models using the Diabetes dataset from Kaggle.")
     st.markdown("📊 [Dataset](https://www.kaggle.com/datasets/mathchi/diabetes-data-set)")
     st.markdown("📗 [Google Colab Notebook](https://colab.research.google.com/drive/1UWI3jhR9aK2h7xXVTs4qAiTrXt3dyOSu?usp=sharing)")
-    st.markdown("🐙 [GitHub Repository](https://github.com/Miguel-Lopez-06/Diabetes-Dashboard")
+    st.markdown("🐙 [GitHub Repository](https://github.com/Miguel-Lopez-06/Streamlit-Diabetes-Dashboard-main)")
     
 
 
