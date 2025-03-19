@@ -636,7 +636,7 @@ elif  st.session_state.page_selection == "prediction":
         dt_DiabetesPedigreeFunction = st.number_input('DiabetesPedigreeFunction', min_value=0.000, max_value=2.50, step=0.001, format="%.3f", key='dt_DiabetesPedigreeFunction')
         dt_Age = st.number_input('Age', min_value=0, max_value=100, step=1, key='dt_Age')
 
-        classes_list = ['Diabetes', 'No Diabetes']
+        classes_list = ['No Diabetes', 'Diabetes']
         
         # Button to detect the Iris species
         if st.button('Detect', key='dt_detect'):
@@ -674,7 +674,7 @@ elif  st.session_state.page_selection == "prediction":
 
 
 
-        classes_list = ['Diabetes', 'No Diabetes']
+        classes_list = ['No Diabetes', 'Diabetes']
         
         # Button to detect the Iris species
         if st.button('Detect', key='log_detect'):
