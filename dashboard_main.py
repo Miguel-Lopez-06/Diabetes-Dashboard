@@ -672,11 +672,11 @@ elif  st.session_state.page_selection == "prediction":
 
     if show_classes:
         # Diabetes Samples
-        st.subheader("Diabetes Samples")
+        st.subheader("No Diabetes Samples")
         st.dataframe(Diabetes_samples, use_container_width=True, hide_index=True)
 
         # No Diabetes Samples
-        st.subheader("No Diabetes Samples")
+        st.subheader("Diabetes Samples")
         st.dataframe(No_Diabetes_samples, use_container_width=True, hide_index=True)
 
     if show_Diabetes:
