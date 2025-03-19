@@ -627,36 +627,27 @@ elif  st.session_state.page_selection == "prediction":
         st.markdown("#### Decision Tree Classifier")
         
         # Input boxes for the features
-        log_Pregnancies = st.number_input('Pregnancies', min_value=0, max_value=20, step=1, key='log_Pregnancies')
+        dt_Pregnancies = st.number_input('Pregnancies', min_value=0.0, max_value=10.0, step=0.1, key='dt_Pregnancies', value=0.0 if st.session_state.clear else st.session_state.get('dt_Pregnancies', 0.0))
+        dt_Glucose = st.number_input('Glucose', min_value=0.0, max_value=10.0, step=0.1, key='dt_Glucose', value=0.0 if st.session_state.clear else st.session_state.get('dt_Glucose', 0.0))
+        dt_BloodPressure = st.number_input('BloodPressure', min_value=0.0, max_value=10.0, step=0.1, key='dt_BloodPressure', value=0.0 if st.session_state.clear else st.session_state.get('dt_BloodPressure', 0.0))
+        dt_SkinThickness = st.number_input('SkinThickness', min_value=0.0, max_value=10.0, step=0.1, key='dt_SkinThickness', value=0.0 if st.session_state.clear else st.session_state.get('dt_SkinThickness', 0.0))
+        dt_Insulin = st.number_input('Insulin', min_value=0.0, max_value=10.0, step=0.1, key='dt_Insulin', value=0.0 if st.session_state.clear else st.session_state.get('dt_Insulin', 0.0))
+        dt_BMI = st.number_input('BMI', min_value=0.0, max_value=10.0, step=0.1, key='dt_BMI', value=0.0 if st.session_state.clear else st.session_state.get('dt_BMI', 0.0))
+        dt_DiabetesPedigreeFunction = st.number_input('DiabetesPedigreeFunction', min_value=0.0, max_value=10.0, step=0.1, key='dt_DiabetesPedigreeFunction', value=0.0 if st.session_state.clear else st.session_state.get('dt_DiabetesPedigreeFunction', 0.0))
+        dt_Age = st.number_input('Age', min_value=0.0, max_value=10.0, step=0.1, key='dt_Age', value=0.0 if st.session_state.clear else st.session_state.get('dt_Age', 0.0))
 
-        log_Glucose = st.number_input('Glucose', min_value=0, max_value=200, step=1, key='log_Glucose')
-
-        log_BloodPressure = st.number_input('BloodPressure', min_value=0, max_value=150, step=1, key='log_BloodPressure')
-
-        log_SkinThickness = st.number_input('SkinThickness', min_value=0, max_value=100, step=1, key='log_SkinThickness')
-
-        log_Insulin = st.number_input('Insulin', min_value=0, max_value=900, step=1, key='log_Insulin')
-
-        log_BMI = st.number_input('BMI', min_value=0.0, max_value=100.0, step=0.1, format="%.1f", key='log_BMI')
-
-        log_DiabetesPedigreeFunction = st.number_input('DiabetesPedigreeFunction', min_value=0.000, max_value=2.50, step=0.001, format="%.3f", key='log_DiabetesPedigreeFunction')
-
-        log_Age = st.number_input('Age', min_value=0, max_value=100, step=1, key='log_Age')
-
-
-
-        classes_list = ['No Diabetes', 'Diabetes']
+        classes_list = ['Diabetes', 'No Diabetes']
         
         # Button to detect the Iris species
-        if st.button('Detect', key='log_detect'):
+        if st.button('Detect', key='dt_detect'):
             # Prepare the input data for prediction
-            log_input_data = [[log_Pregnancies, log_Glucose, log_BloodPressure, log_SkinThickness, log_Insulin, log_BMI, log_DiabetesPedigreeFunction, log_Age]]
+            dt_input_data = [[dt_Pregnancies, dt_Glucose, dt_BloodPressure, dt_SkinThickness, dt_Insulin, dt_BMI, dt_DiabetesPedigreeFunction, dt_Age]]
             
             # Predict the Iris species
-            log_prediction = log_reg.predict(log_input_data)
+            dt_prediction = dt_classifier.predict(dt_input_data)
             
             # Display the prediction result
-            st.markdown(f'The predicted outcome is: `{classes_list[log_prediction[0]]}`')
+            st.markdown(f'The predicted outcome is: `{classes_list[dt_prediction[0]]}`')
 
 
 
