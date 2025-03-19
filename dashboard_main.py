@@ -661,6 +661,43 @@ elif  st.session_state.page_selection == "prediction":
             st.markdown(f'The predicted outcome is: `{classes_list[log_prediction[0]]}`')
 
     
+    with col_pred[2]:
+        st.markdown("#### Logistic Regression")
+
+         # Input boxes for the features
+
+        log_Pregnancies = st.number_input('Pregnancies', min_value=0, max_value=20, step=1, key='log_Pregnancies')
+
+        log_Glucose = st.number_input('Glucose', min_value=0, max_value=200, step=1, key='log_Glucose')
+
+        log_BloodPressure = st.number_input('BloodPressure', min_value=0, max_value=150, step=1, key='log_BloodPressure')
+
+        log_SkinThickness = st.number_input('SkinThickness', min_value=0, max_value=100, step=1, key='log_SkinThickness')
+
+        log_Insulin = st.number_input('Insulin', min_value=0, max_value=900, step=1, key='log_Insulin')
+
+        log_BMI = st.number_input('BMI', min_value=0.0, max_value=100.0, step=0.1, format="%.1f", key='log_BMI')
+
+        log_DiabetesPedigreeFunction = st.number_input('DiabetesPedigreeFunction', min_value=0.000, max_value=2.50, step=0.001, format="%.3f", key='log_DiabetesPedigreeFunction')
+
+        log_Age = st.number_input('Age', min_value=0, max_value=100, step=1, key='log_Age')
+
+
+
+        classes_list = ['No Diabetes', 'Diabetes']
+        
+        # Button to detect the Iris species
+        if st.button('Detect', key='log_detect'):
+            # Prepare the input data for prediction
+            log_input_data = [[log_Pregnancies, log_Glucose, log_BloodPressure, log_SkinThickness, log_Insulin, log_BMI, log_DiabetesPedigreeFunction, log_Age]]
+            
+            # Predict the Iris species
+            log_prediction = log_reg.predict(log_input_data)
+            
+            # Display the prediction result
+            st.markdown(f'The predicted outcome is: `{classes_list[log_prediction[0]]}`')
+
+    
 
     # Create 3 Data Frames containing  5 rows for each species
     Diabetes_samples = diabetes_df[diabetes_df["Outcome"] == "Diabetes"].head(5)
