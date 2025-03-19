@@ -661,8 +661,8 @@ elif  st.session_state.page_selection == "prediction":
             st.markdown(f'The predicted outcome is: `{classes_list[log_prediction[0]]}`')
 
     # Create 3 Data Frames containing  5 rows for each species
-    Diabetes_samples = diabetes_df[diabetes_df["Outcome"] == "No Diabetes"].head(5)
-    No_Diabetes_samples = diabetes_df[diabetes_df["Outcome"] == "Diabetes"].head(5)
+    Diabetes_samples = diabetes_df[diabetes_df["Outcome"] == "Diabetes"].head(5)
+    No_Diabetes_samples = diabetes_df[diabetes_df["Outcome"] == "No Diabetes"].head(5)
     
 
     if show_dataset:
@@ -672,22 +672,22 @@ elif  st.session_state.page_selection == "prediction":
 
     if show_classes:
         # Diabetes Samples
-        st.subheader("No Diabetes Samples")
-        st.dataframe(No_Diabetes_samples, use_container_width=True, hide_index=True)
-
-        # No Diabetes Samples
         st.subheader("Diabetes Samples")
         st.dataframe(Diabetes_samples, use_container_width=True, hide_index=True)
 
-    if show_No_Diabetes:
-        # Display the Diabetes samples
+        # No Diabetes Samples
         st.subheader("No Diabetes Samples")
         st.dataframe(No_Diabetes_samples, use_container_width=True, hide_index=True)
 
     if show_Diabetes:
-        # Display the No Diabetes samples
+        # Display the Diabetes samples
         st.subheader("Diabetes Samples")
         st.dataframe(Diabetes_samples, use_container_width=True, hide_index=True)
+
+    if show_No_Diabetes:
+        # Display the No Diabetes samples
+        st.subheader("No Diabetes Samples")
+        st.dataframe(No_Diabetes_samples, use_container_width=True, hide_index=True)
 
 # Conclusions Page
 elif st.session_state.page_selection == "conclusion":
