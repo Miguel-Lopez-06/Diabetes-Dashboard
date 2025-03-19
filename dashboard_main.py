@@ -639,11 +639,12 @@ elif  st.session_state.page_selection == "prediction":
 
         log_Insulin = st.number_input('Insulin', min_value=0, max_value=500, step=1, key='log_Insulin')
 
-        log_BMI = st.number_input('BMI', min_value=0.0, max_value=100.0, step=0.1, key='log_BMI')
+        log_BMI = st.number_input('BMI', min_value=0.0, max_value=100.0, step=0.1, format="%.1f", key='log_BMI')
 
-        log_DiabetesPedigreeFunction = st.number_input('DiabetesPedigreeFunction', min_value=0.0, max_value=2.5, step=0.001, key='log_DiabetesPedigreeFunction')
+        log_DiabetesPedigreeFunction = st.number_input('DiabetesPedigreeFunction', min_value=0.000, max_value=2.5, step=0.001, format="%.3f", key='log_DiabetesPedigreeFunction')
 
         log_Age = st.number_input('Age', min_value=0, max_value=120, step=1, key='log_Age')
+
 
 
         classes_list = ['Diabetes', 'No Diabetes']
