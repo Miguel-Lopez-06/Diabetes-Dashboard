@@ -673,21 +673,21 @@ elif  st.session_state.page_selection == "prediction":
     if show_classes:
         # Diabetes Samples
         st.subheader("No Diabetes Samples")
-        st.dataframe(Diabetes_samples, use_container_width=True, hide_index=True)
+        st.dataframe(No_Diabetes_samples, use_container_width=True, hide_index=True)
 
         # No Diabetes Samples
         st.subheader("Diabetes Samples")
-        st.dataframe(No_Diabetes_samples, use_container_width=True, hide_index=True)
+        st.dataframe(Diabetes_samples, use_container_width=True, hide_index=True)
 
     if show_Diabetes:
         # Display the Diabetes samples
-        st.subheader("Diabetes Samples")
-        st.dataframe(Diabetes_samples, use_container_width=True, hide_index=True)
+        st.subheader("No Diabetes Samples")
+        st.dataframe(No_Diabetes_samples, use_container_width=True, hide_index=True)
 
     if show_No_Diabetes:
         # Display the No Diabetes samples
-        st.subheader("No Diabetes Samples")
-        st.dataframe(No_Diabetes_samples, use_container_width=True, hide_index=True)
+        st.subheader("Diabetes Samples")
+        st.dataframe(Diabetes_samples, use_container_width=True, hide_index=True)
 
 # Conclusions Page
 elif st.session_state.page_selection == "conclusion":
