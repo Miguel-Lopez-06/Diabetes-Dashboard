@@ -628,13 +628,13 @@ elif  st.session_state.page_selection == "prediction":
         
         # Input boxes for the features
         dt_Pregnancies = st.number_input('Pregnancies', min_value=0, max_value=20, step=1, key='dt_Pregnancies')
-        dt_Glucose = st.number_input('Glucose', min_value=0.0, max_value=10.0, step=0.1, key='dt_Glucose', value=0.0 if st.session_state.clear else st.session_state.get('dt_Glucose', 0.0))
-        dt_BloodPressure = st.number_input('BloodPressure', min_value=0.0, max_value=10.0, step=0.1, key='dt_BloodPressure', value=0.0 if st.session_state.clear else st.session_state.get('dt_BloodPressure', 0.0))
-        dt_SkinThickness = st.number_input('SkinThickness', min_value=0.0, max_value=10.0, step=0.1, key='dt_SkinThickness', value=0.0 if st.session_state.clear else st.session_state.get('dt_SkinThickness', 0.0))
-        dt_Insulin = st.number_input('Insulin', min_value=0.0, max_value=10.0, step=0.1, key='dt_Insulin', value=0.0 if st.session_state.clear else st.session_state.get('dt_Insulin', 0.0))
-        dt_BMI = st.number_input('BMI', min_value=0.0, max_value=10.0, step=0.1, key='dt_BMI', value=0.0 if st.session_state.clear else st.session_state.get('dt_BMI', 0.0))
-        dt_DiabetesPedigreeFunction = st.number_input('DiabetesPedigreeFunction', min_value=0.0, max_value=10.0, step=0.1, key='dt_DiabetesPedigreeFunction', value=0.0 if st.session_state.clear else st.session_state.get('dt_DiabetesPedigreeFunction', 0.0))
-        dt_Age = st.number_input('Age', min_value=0.0, max_value=10.0, step=0.1, key='dt_Age', value=0.0 if st.session_state.clear else st.session_state.get('dt_Age', 0.0))
+        dt_Glucose = st.number_input('Glucose', min_value=0, max_value=200, step=1, key='dt_Glucose')
+        dt_BloodPressure = st.number_input('BloodPressure', min_value=0, max_value=150, step=1, key='dt_BloodPressure')
+        dt_SkinThickness = st.number_input('SkinThickness', min_value=0, max_value=100, step=1, key='dt_SkinThickness')
+        dt_Insulin = st.number_input('Insulin', min_value=0, max_value=900, step=1, key='dt_Insulin')
+        dt_BMI = st.number_input('BMI', min_value=0.0, max_value=100.0, step=0.1, format="%.1f", key='log_BMI')
+        dt_DiabetesPedigreeFunction = st.number_input('DiabetesPedigreeFunction', min_value=0.000, max_value=2.50, step=0.001, format="%.3f", key='dt_DiabetesPedigreeFunction')
+        dt_Age = st.number_input('Age', min_value=0, max_value=100, step=1, key='dt_Age')
 
         classes_list = ['Diabetes', 'No Diabetes']
         
