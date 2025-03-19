@@ -632,7 +632,7 @@ elif  st.session_state.page_selection == "prediction":
         dt_BloodPressure = st.number_input('BloodPressure', min_value=0, max_value=150, step=1, key='dt_BloodPressure')
         dt_SkinThickness = st.number_input('SkinThickness', min_value=0, max_value=100, step=1, key='dt_SkinThickness')
         dt_Insulin = st.number_input('Insulin', min_value=0, max_value=900, step=1, key='dt_Insulin')
-        dt_BMI = st.number_input('BMI', min_value=0.0, max_value=100.0, step=0.1, format="%.1f", key='log_BMI')
+        dt_BMI = st.number_input('BMI', min_value=0.0, max_value=100.0, step=0.1, format="%.1f", key='dt_BMI')
         dt_DiabetesPedigreeFunction = st.number_input('DiabetesPedigreeFunction', min_value=0.000, max_value=2.50, step=0.001, format="%.3f", key='dt_DiabetesPedigreeFunction')
         dt_Age = st.number_input('Age', min_value=0, max_value=100, step=1, key='dt_Age')
 
