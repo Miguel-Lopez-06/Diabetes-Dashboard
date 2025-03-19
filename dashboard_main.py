@@ -57,7 +57,7 @@ def set_page_selection(page):
 
 with st.sidebar:
 
-    st.title('Diabetes Dashboard')
+    st.title('Diabetes Dashboardddddddd')
 
     # Page Button Navigation
     st.subheader("Pages")
