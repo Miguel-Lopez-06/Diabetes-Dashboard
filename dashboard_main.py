@@ -674,7 +674,7 @@ elif  st.session_state.page_selection == "prediction":
 
 
 
-        classes_list = ['No Diabetes', 'Diabetes']
+        classes_list = ['Diabetes', 'No Diabetes']
         
         # Button to detect the Iris species
         if st.button('Detect', key='log_detect'):
